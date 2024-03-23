@@ -1,0 +1,207 @@
+---
+
+---
+
+
+
+<section id="RPsbsr-1593">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <!--Top left image-->
+            <picture class="cs-picture cs-picture1">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="public/Mobile.webp">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="public/Mobile.webp">
+                <img loading="lazy" decoding="async" src="public/Mobile.webp" alt="mechanic" width="500" height="500">
+            </picture>
+            <!--Top Right image-->
+            
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">Spotify catalog</span>
+            <h2 class="cs-title">More than 100 million songs.</h2>
+            <p class="cs-text">
+              Thanks to Spotify's huge catalog, you can create any kind of music quiz game to suit your mood. 
+            </p>
+            <a href="https://app.spotiguess.com/" class="cs-button-solid">Play</a>
+        </div>
+    </div>
+</section>
+                                
+
+
+<style>
+    /*-- -------------------------- -->
+<---       Side By Side         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #RPsbs-1593,
+  #RPsbsr-1593 {
+    padding: var(--sectionPadding);
+  }
+  #RPsbs-1593 .cs-container,
+  #RPsbsr-1593 .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+    color: var(--bodyTextColor);
+  }
+  #RPsbs-1593 .cs-content,
+  #RPsbsr-1593 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 36.625rem;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #RPsbs-1593 .cs-text,
+  #RPsbsr-1593 .cs-text {
+    margin-bottom: 1rem;
+  }
+  #RPsbs-1593 .cs-text:last-of-type,
+  #RPsbsr-1593 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #RPsbs-1593 .cs-button-solid,
+  #RPsbsr-1593 .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #000;
+    min-width: 9.375rem;
+    padding: 0 3rem;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+  }
+  #RPsbs-1593 .cs-button-solid:before,
+  #RPsbsr-1593 .cs-button-solid:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: var(--primaryLight);
+    border-radius: 5px;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width .3s;
+  }
+  #RPsbs-1593 .cs-button-solid:hover:before,
+  #RPsbsr-1593 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #RPsbs-1593 .cs-image-group,
+  #RPsbsr-1593 .cs-image-group {
+    /* scales the whole group based on the view width size and stop when that vales equals .745em, resets at desktop */
+    font-size: min(1.959vw, .745em);
+    width: 39.375em;
+    /* we set a minimum height so it never gets smaller than this value */
+    min-height: 39.25em;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  #RPsbs-1593 .cs-picture,
+  #RPsbsr-1593 .cs-picture {
+    position: absolute;
+  }
+  #RPsbs-1593 .cs-picture img,
+  #RPsbsr-1593 .cs-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #RPsbs-1593 .cs-picture1,
+  #RPsbsr-1593 .cs-picture1 {
+    /* the percentage heights allow them to be responsive to the height of the parent cs-image-group. On desktop, when the felxbox is set to aling-items: stretch, the cs-image group will stretch to fill the height of the parent container. So when you add more content to the cs-content group and make it taller, the cs-image group will get taller with it and every image will stretch with the parent, making this entire group responsive to the changing amounts of content next to it */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #RPsbs-1593 .cs-picture2,
+  #RPsbsr-1593 .cs-picture2 {
+    width: 0em;
+    height: 0%;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #RPsbs-1593 .cs-container,
+  #RPsbsr-1593 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  #RPsbs-1593 .cs-content,
+  #RPsbsr-1593 .cs-content {
+    /* this padding sets a minimum gap between the top and bottom of the content div and the top and bottom of the cs-image-group */
+    padding: 3.75rem 0;
+    /* while the cs-image-group will stretch to fill the height of the parent, this property will ensure that the cs-content group aligns itse;f in the center of the parent div instead of stretching */
+    align-self: center;
+  }
+  #RPsbs-1593 .cs-image-group,
+  #RPsbsr-1593 .cs-image-group {
+    font-size: min(1.2vw, 1em);
+    flex: none;
+  }
+}
+
+/*-- -------------------------- -->
+<---   Side By Side Reverse     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #RPsbsr-1593 {
+    background: #181515;
+    
+  }
+  #RPsbsr-1593 .cs-picture1 {
+    left: auto;
+    right: 0;
+  }
+  #RPsbsr-1593 .cs-picture2 {
+    right: auto;
+    left: 0;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #RPsbsr-1593 .cs-image-group {
+    /* sends it to the right in the 2nd position */
+    order: 2;
+  }
+}
+                                
+</style>

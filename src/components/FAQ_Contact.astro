@@ -1,0 +1,424 @@
+---
+
+---
+
+<!-- ============================================ --><!--                   Contact                    --><!-- ============================================ -->
+<section id="contact-1333">
+    <div class="cs-container">
+        <!--Form-->
+        <form
+            class="cs-form"
+            id="cs-form-1333"
+            name="Contact Form"
+            method="post"
+        >
+            <div class="cs-content">
+                <span class="cs-topper">Report a bug? Want a new Feature?</span>
+                <h2 class="cs-title">Contact Us</h2>
+            </div>
+            <label class="cs-label">
+                Name
+                <input
+                    class="cs-input"
+                    required
+                    type="text"
+                    id="name-1333"
+                    name="name"
+                    placeholder="John Doe"
+                />
+            </label>
+            <label class="cs-label cs-email">
+                Email
+                <input
+                    class="cs-input"
+                    required
+                    type="email"
+                    id="email-1333"
+                    name="email"
+                    placeholder="xxx@gmail.com"
+                />
+            </label>
+            
+            <label class="cs-label">
+                Message
+                <textarea
+                    class="cs-input cs-textarea"
+                    required
+                    name="Message"
+                    id="message-1333"
+                    placeholder="Write message here..."></textarea>
+            </label>
+            <button class="cs-button-solid cs-submit" type="submit"
+                >Send</button
+            >
+        </form>
+        <div class="cs-content">
+            <span class="cs-topper"></span>
+            <h2 class="cs-title">Frequently Asked Questions</h2>
+            <ul class="cs-faq-group">
+                <!-- Active class added as default -->
+                <li class="cs-faq-item active">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            How much does it cost?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        You can play up to 5 music quiz per day for free. Then
+                        the lifetime pass for unlimited games cost $4.99.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Do I need a spotify Premium account?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Yes, you need a Spotify premium account to play.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            How do I play the game?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Simply log in with your Spotify account, then select the type of game.
+                        Four types of game are available: AI Generated, Artist, Playlist and Liked Songs.
+
+                    </p>
+                </li>
+                
+
+            </ul>
+        </div>
+    </div>
+</section>
+
+<style>
+    /*-- -------------------------- -->
+<---          Contact           -->
+<--- -------------------------- -*/
+
+    /* Mobile - 360px */
+    @media only screen and (min-width: 0rem) {
+        #contact-1333 {
+            padding: var(--sectionPadding);
+            position: relative;
+            z-index: 1;
+        }
+        #contact-1333 .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            max-width: 36.5rem;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-direction: column;
+            /* 48px - 80px */
+            gap: clamp(3rem, 6vw, 5rem);
+            position: relative;
+        }
+        #contact-1333 .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+
+        #contact-1333 .cs-title {
+            max-width: 23ch;
+            margin: 0 0 1.75rem 0;
+        }
+        #contact-1333 .cs-form {
+            width: 100%;
+            max-width: 40.625rem;
+            /* 32px - 48px top and bottom */
+            /* 16px - 60px left and right */
+            padding: clamp(2rem, 5.18vw, 3rem) clamp(1rem, 5vw, 3.75rem);
+            /* prevents flexbox from affecting height and width */
+            box-sizing: border-box;
+            background-color: #101010;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            border-radius: 10px;
+            /* prevents flexbox from squishing it */
+            flex: none;
+            gap: 0.75rem;
+        }
+        #contact-1333 .cs-form .cs-title {
+            /* 16px - 28px */
+            margin: 0 0 clamp(1rem, 3vw, 1.75rem) 0;
+        }
+        #contact-1333 .cs-label {
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            width: 100%;
+            color: var(--headerColor);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 0.25rem;
+        }
+        #contact-1333 .cs-input {
+            font-size: 1rem;
+            width: 100%;
+            height: 3.5rem;
+            padding: 0;
+            padding-left: 1.5rem;
+            color: #000;
+            background-color: #808080;
+            border-radius: 5px;
+            border: none;
+            /* prevents padding from adding to height and width */
+            box-sizing: border-box;
+        }
+        #contact-1333 .cs-input::placeholder {
+            color: #000000;
+            opacity: 0.6;
+        }
+        #contact-1333 .cs-textarea {
+            min-height: 7.5rem;
+            padding-top: 1.5rem;
+            /* 16px - 28px */
+            margin: 0 0 clamp(1rem, 3vw, 1.75rem) 0;
+            font-family: inherit;
+        }
+        #contact-1333 .cs-button-solid {
+            font-size: 1rem;
+            /* 46px - 56px */
+            line-height: clamp(2.875em, 5.5vw, 3.5em);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: #1a1a1a;
+            border: none;
+            min-width: 9.375rem;
+            padding: 0 1.5rem;
+            background-color: var(--primary);
+            overflow: hidden;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            border-radius: 5px;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+            transition: color 0.3s;
+        }
+        #contact-1333 .cs-button-solid:before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 0%;
+            background: var(--primaryLight);
+            opacity: 1;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: width 0.3s;
+        }
+        #contact-1333 .cs-button-solid:hover {
+            
+        }
+        #contact-1333 .cs-button-solid:hover:before {
+            width: 100%;
+        }
+        #contact-1333 .cs-submit {
+            width: 100%;
+            min-width: 17.6875rem;
+        }
+        #contact-1333 .cs-submit:hover {
+            cursor: pointer;
+        }
+        #contact-1333 .cs-faq-group {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #contact-1333 .cs-faq-item {
+            list-style: none;
+            width: 100%;
+            border-bottom: 1px solid #e8e8e8;
+            transition: border-bottom 0.3s;
+        }
+        #contact-1333 .cs-faq-item.active {
+            border-color: var(--primary);
+        }
+        #contact-1333 .cs-faq-item.active .cs-button {
+            color: var(--primary);
+        }
+        #contact-1333 .cs-faq-item.active .cs-button:before {
+            background-color: var(--primary);
+            transform: rotate(315deg);
+        }
+        #contact-1333 .cs-faq-item.active .cs-button:after {
+            background-color: var(--primary);
+            transform: rotate(-315deg);
+        }
+        #contact-1333 .cs-faq-item.active .cs-item-p {
+            height: auto;
+            /* 20px - 24px bottom */
+            /* 16px - 24px left & right */
+            padding: 0 clamp(1rem, 2vw, 1.5rem) clamp(1.25rem, 2vw, 1.5rem) 0;
+            opacity: 1;
+        }
+        #contact-1333 .cs-button {
+            font-size: 1rem;
+            line-height: 1.2em;
+            text-align: left;
+            font-weight: bold;
+            /* 16px - 24px */
+            padding: clamp(1rem, 2vw, 1.5rem);
+            padding-left: 0;
+            border: none;
+            background: transparent;
+            color: var(--headerColor);
+            display: block;
+            width: 100%;
+            position: relative;
+            transition:
+                background-color 0.3s,
+                color 0.3s;
+        }
+        #contact-1333 .cs-button:hover {
+            cursor: pointer;
+        }
+        #contact-1333 .cs-button:before {
+            /* left line */
+            content: "";
+            width: 0.5rem;
+            height: 0.125rem;
+            background-color: var(--headerColor);
+            opacity: 1;
+            border-radius: 50%;
+            position: absolute;
+            display: block;
+            top: 45%;
+            right: 1.5rem;
+            transform: rotate(45deg);
+            /* animate the transform from the left side of the x axis, and the center of the y */
+            transform-origin: left center;
+            transition: transform 0.5s;
+        }
+        #contact-1333 .cs-button:after {
+            /* right line */
+            content: "";
+            width: 0.5rem;
+            height: 0.125rem;
+            background-color: var(--headerColor);
+            opacity: 1;
+            border-radius: 50%;
+            position: absolute;
+            display: block;
+            top: 45%;
+            right: 1.3125rem;
+            transform: rotate(-45deg);
+            /* animate the transform from the right side of the x axis, and the center of the y */
+            transform-origin: right center;
+            transition: transform 0.5s;
+        }
+        #contact-1333 .cs-button-text {
+            width: 80%;
+            display: block;
+        }
+        #contact-1333 .cs-item-p {
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            line-height: 1.5em;
+            width: 90%;
+            height: 0;
+            margin: 0;
+            /* 16px - 24px */
+            padding: 0 clamp(1rem, 2vw, 1.5rem);
+            opacity: 0;
+            color: var(--bodyTextColor);
+            /* clips the text so it doesn't show up */
+            overflow: hidden;
+            transition:
+                opacity 0.3s,
+                padding-bottom 0.3s;
+        }
+    }
+    /* Desktop - 1024px */
+    @media only screen and (min-width: 64rem) {
+        #contact-1333 .cs-container {
+            max-width: 80rem;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        #contact-1333 .cs-form {
+            width: 45vw;
+        }
+        #contact-1333 .cs-submit {
+            width: auto;
+        }
+    }
+</style>
+
+<script>
+    const faqItems = Array.from(document.querySelectorAll(".cs-faq-item"));
+    for (const item of faqItems) {
+        const onClick = () => {
+            item.classList.toggle("active");
+        };
+        item.addEventListener("click", onClick);
+    }
+
+
+    
+    const form = document.getElementById("cs-form-1333");
+    // Assert the specific types for each input to access the `value` property
+    const nameInput = document.getElementById("name-1333") as HTMLInputElement;
+    const emailInput = document.getElementById("email-1333") as HTMLInputElement;
+    const messageInput = document.getElementById("message-1333") as HTMLTextAreaElement;
+
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        var formData = {
+            name: nameInput.value,
+            email: emailInput.value,
+            message: messageInput.value
+        };
+
+        // Send the data to the webhook
+        fetch("https://hook.eu2.make.com/iu8x5dwe5q5p767sor087pjhb5nda99o", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log("Success:", data);
+
+            // Clear the form inputs
+            nameInput.value = '';
+            emailInput.value = '';
+            messageInput.value = '';
+
+            // Display the thank you message
+            alert('Thank you for your feedback. We will get back to you as soon as possible.');
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
+    });
+</script>
+
+
