@@ -1,4 +1,6 @@
 ---
+import Friends from "../images/Friends.jpg"
+import Friends6 from "../images/Friends6.jpg"
 ---
 
 
@@ -12,18 +14,18 @@
             <!--Top left image-->
             <picture class="cs-picture cs-picture1">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="src/images/Friends6.png">
+                <source media="(max-width: 600px)" srcset={Friends.src}>
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="src/images/Friends6.png">
-                <img loading="lazy" decoding="async" src="src/images/Friends6.png" alt="mechanic" width="413" height="500">
+                <source media="(min-width: 601px)" srcset={Friends.src}>
+                <img loading="lazy" decoding="async" src={Friends.src} alt="mechanic" width="413" height="500">
             </picture>
             <!--Top Right image-->
             <picture class="cs-picture cs-picture2">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="src/images/Friends.jpg">
+                <source media="(max-width: 600px)" srcset={Friends6.src}>
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="src/images/Friends.jpg">
-                <img loading="lazy" decoding="async" src="src/images/Friends.jpg" alt="mechanic" width="413" height="280">
+                <source media="(min-width: 601px)" srcset={Friends6.src}>
+                <img loading="lazy" decoding="async" src={Friends6.src} alt="mechanic" width="413" height="280">
             </picture>
         </div>
         <div class="cs-content">

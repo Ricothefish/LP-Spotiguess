@@ -1,5 +1,5 @@
 ---
-
+import Mobile from "../images/Mobile.webp"
 ---
 
 
@@ -10,10 +10,10 @@
             <!--Top left image-->
             <picture class="cs-picture cs-picture1">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="src/images/Mobile.webp">
+                <source media="(max-width: 600px)" srcset={Mobile.src}>
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="src/images/Mobile.webp">
-                <img loading="lazy" decoding="async" src="src/images/Mobile.webp" alt="mechanic" width="500" height="500">
+                <source media="(min-width: 601px)" srcset={Mobile.src}>
+                <img loading="lazy" decoding="async" src={Mobile.src} alt="mechanic" width="500" height="500">
             </picture>
             <!--Top Right image-->
             
