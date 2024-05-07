@@ -1,0 +1,82 @@
+---
+
+// Importation du layout et autres composants si nécessaire
+import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/NavBar.astro";
+
+
+// Manually define the articles, pointing to their respective .astro files
+const blogPosts = [
+    {
+        slug: "Getting-started-with-Spotiguess",
+        title: "Getting started with Spotiguess",
+        date: "2024-05-05",
+        image: "src/pages/blog/TV-Spotiguess.png"
+    }
+];
+
+// Sort posts by date
+blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+---
+
+
+
+
+<Layout title="Blog">
+    <NavBar />
+    <h1>Blog Articles</h1>
+    <h2>Deep dive into the latest news.</h2>
+    <ul class="blog-list">
+        {
+            blogPosts.map(({ slug, title, date, image }) => (
+                <li class="blog-card">
+                    <a href={`/blog/${slug}`}>
+                        <img src={image || '/default-image-blog.jpeg'} alt={title} />
+                        <h3>{title}</h3>
+                    </a>
+                    <p>Published on: {new Date(date).toLocaleDateString()}</p>
+                </li>
+            ))
+        }
+    </ul>
+</Layout>
+
+<style>
+    .blog-list {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .blog-card {
+        background: #434343;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 300px;   
+        padding: 5px;
+    }
+
+    .blog-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+    }
+
+    .blog-card h3 {
+        margin: 16px;
+        font-size: 1.2rem;
+        color: #ffffff;
+    }
+
+    .blog-card p {
+        margin: 0 16px 16px;
+        color: #b1b1b1;
+    }
+
+    h1, h2 {
+        margin: 20px 40px ;
+        color: var(--headerColor);
+    }
+</style>

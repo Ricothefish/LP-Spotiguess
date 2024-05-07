@@ -1,0 +1,43 @@
+---
+const { title, date, image } = Astro.props;
+import Layout from "./Layout.astro";
+---
+<Layout title={title}>
+    <article class="article-layout">
+
+        <h1>{title}</h1>
+        <p>Published on: {new Date(date).toLocaleDateString()}</p>
+        {image && <img src={image} alt={title} />}
+        <section>
+            <slot />
+        </section>
+    </article>
+</Layout>
+
+<style>
+    .article-layout {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .article-layout h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .article-layout img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+
+    .article-layout p {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    .article-layout section {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+</style>

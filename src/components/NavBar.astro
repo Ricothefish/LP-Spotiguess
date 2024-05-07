@@ -29,28 +29,33 @@ import logo from "../images/Logo.png"
             <div class="cs-ul-wrapper">
                 <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
                     <li class="cs-li">
-                        <a href="#hero-856" class="cs-li-link cs-active">
+                        <a href="/" class="cs-li-link cs-active">
                             Home
                         </a>
                     </li>
                     <li class="cs-li">
-                        <a href="#RPsbs-1593" class="cs-li-link">
+                        <a href="/#sbs-1591" class="cs-li-link">
                             Features
                         </a>
                     </li>
                     <li class="cs-li">
-                        <a href="#reviews-62" class="cs-li-link">
+                        <a href="/#reviews-62" class="cs-li-link">
                             Reviews
                         </a>
                     </li>
                     <li class="cs-li">
-                        <a href="#contact-1333" class="cs-li-link">
+                        <a href="/#contact-1333" class="cs-li-link">
                             Contact
                         </a>
                     </li>
                     <li class="cs-li">
-                        <a href="#pricing-1087" class="cs-li-link">
+                        <a href="/#pricing-1087" class="cs-li-link">
                             Pricing
+                        </a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="/blog" class="cs-li-link">
+                            Blog
                         </a>
                     </li>
                 </ul>
@@ -82,8 +87,7 @@ import logo from "../images/Logo.png"
     padding: 0.75rem 1rem;
     background-color: #111112;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    position: fixed;
-    z-index: 10000;
+
   }
   #cs-navigation:before {
     content: "";
@@ -320,8 +324,7 @@ import logo from "../images/Logo.png"
     padding: 0 1rem;
     background-color: #111112;
     box-shadow: rgba(13, 27, 40, 0.2) 0px 8px 24px;
-    position: fixed;
-    z-index: 10000;
+    
   }
   #cs-navigation .cs-container {
     width: 100%;
@@ -453,6 +456,29 @@ CShamburgerMenu.addEventListener('click', function () {
 	// run the function to check the aria-expanded value
 	ariaExpanded();
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const currentUrl = window.location.pathname;
+    const navLinks = document.querySelectorAll('#cs-navigation .cs-li-link');
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+
+        // If the href is exactly "/" and the current path is not exactly "/", don't mark as active
+        if (href === '/' && currentUrl !== '/') {
+            link.classList.remove('cs-active');
+        }
+        // Use `startsWith` to check if the current path starts with the href path
+        else if (currentUrl.startsWith(href)) {
+            link.classList.add('cs-active');
+        } else {
+            link.classList.remove('cs-active');
+        }
+    });
+});
+
+
+
 
 // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
 function ariaExpanded() {

@@ -1,0 +1,192 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import NavBar from "../../components/NavBar.astro";
+import Footer from "../../components/Footer.astro";
+
+// Article metadata
+const title = "Getting started with Spotiguess";
+const date = "2024-05-05";
+const image = "/src/pages/blog/TV-Spotiguess.png";
+---
+
+<Layout title={title}>
+    <NavBar />
+    <div class="article-wrapper">
+        <article class="specific-article">
+            <h1>{title}</h1>
+            <p>Published on: {new Date(date).toLocaleDateString()}</p>
+            {image && <img src={image} alt={title} class="responsive-image"/>}
+            <section>
+                <h2><strong>What is Spotiguess?</strong></h2>
+                <p>Spotiguess is the first Guess the Song Game that connects to your personal Spotify account.</p>
+                <ul>
+                    <li><strong>Customized recommendations:</strong> It uses your Spotify music history to suggest meaningful music quizzes.</li>
+                    <li><strong>Huge music catalog:</strong> Thanks to the Spotify catalog, it can generate millions of different guess-the-songs playlists.</li>
+                </ul>
+                <a href="https://app.spotiguess.com/" class="cs-button-solid">Give it a try!</a>
+                <hr class="separator"/>
+
+                <h2><strong>What type of music quiz can I play?</strong></h2>
+                <p>Whether you're a fan of a specific artist or enjoy your carefully curated playlists, Spotiguess has a mode for you. Here’s how you can play:</p>
+                <ul>
+                    <li><strong>Artist:</strong> Get a random selection of songs from any artist’s entire Spotify discography.</li>
+                    <li><strong>Playlist:</strong> Listen to random tracks from any of your existing Spotify playlists.</li>
+                    <li><strong>Liked Songs:</strong> Your liked songs on Spotify become the basis for a guessing game.</li>
+                    <li><strong>AI Generated:</strong> Let our AI tailor a playlist for you, simply enter a prompt and see what it creates.</li>
+                </ul>
+                <p>Each game mode offers a fresh way to experience the music you love or discover new tracks.</p>
+                <img src="/src/pages/blog/Spotiguess-mode.png" alt={title} class="responsive-image"/>
+                <hr class="separator"/>
+
+                <h2><strong>How can I get better at Spotiguess: Tips and Tricks</strong></h2>
+                <p>Want to become a Spotiguess champ? Here are some tips to sharpen your skills:</p>
+                <ul>
+                    <li><strong>Know Your Music:</strong> Familiarize yourself with the artists and playlists you choose to play. The more you listen, the faster you'll recognize songs.</li>
+                    <li><strong>Stay Focused:</strong> Keep your ears open and listen closely to the intro—many songs can be identified in the first few seconds.</li>
+                    <li><strong>Play Regularly:</strong> Regular gameplay can significantly improve your song recognition speed and accuracy.</li>
+                    <li><strong>Enjoy the Process:</strong> While it’s great to be competitive, enjoying the music and having fun with friends is what truly enriches the game.</li>
+                </ul>
+                <p>With these tips, you’re all set to dominate your next Spotiguess game night!</p>
+                <a href="https://app.spotiguess.com/" class="cs-button-solid">Try Spotiguess!</a>
+            </section>
+        </article>
+    </div>
+    <Footer />
+</Layout>
+
+<style>
+    .article-wrapper {
+        display: flex;
+        justify-content: center; /* Centers the article horizontally */
+    }
+
+    .specific-article {
+        color: white; /* Specific styles for this article */
+        max-width: 800px; /* Limit the width of the article */
+        width: 100%; /* Make it responsive */
+        padding: 20px; /* Optional: Add some padding to the article */
+    }
+    .responsive-image {
+        max-width: 100%;
+        height: auto;
+    }
+    .separator {
+        margin-top: 40px;
+    }
+
+
+	.cs-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #000000;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+    }
+    .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: var(--primaryLight); 
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    .cs-button-solid:hover:before {
+        width: 100%;
+    }
+    .cs-picture {
+        width: 100%;
+        max-width: 35.625rem;
+        /* 400px - 712px */
+        height: clamp(25rem, 95vw, 44.5rem);
+        /* 100px - 200px */
+        border-radius: 0 clamp(6.25rem, 17vw, 12.5rem) 0
+            clamp(6.25rem, 17vw, 12.5rem);
+        box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.16);
+        /* clips the img tag corners */
+        overflow: hidden;
+        display: block;
+        position: relative;
+    }
+</style>
+
+<style is:global>
+	:root {
+		/* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+		--primary: #05a51d;
+		--primaryLight: #18cf00;
+		--primaryDark: #00540d;
+		--secondary: #ffba43;
+		--secondaryLight: #ffba43;
+		--headerColor: #ffffff;
+		--bodyTextColor: #ffffff;
+		--bodyTextColorWhite: #fafbfc;
+		/* 13px - 16px */
+		--topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+		/* 31px - 49px */
+		--headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+		--bodyFontSize: 1rem;
+		/* 60px - 100px top and bottom */
+		--sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	*,
+	*:before,
+	*:after {
+		/* prevents padding from affecting height and width */
+		box-sizing: border-box;
+	}
+	.cs-topper {
+		font-size: var(--topperFontSize) !important;
+		line-height: 1.2em;
+		text-transform: uppercase;
+		text-align: inherit;
+		letter-spacing: 0.1em;
+		font-weight: 700;
+		color: var(--primary);
+		margin-bottom: 0.25rem;
+		display: block;
+	}
+
+	.cs-title {
+		font-size: var(--headerFontSize);
+		font-weight: 900;
+		line-height: 1.2em;
+		text-align: inherit;
+		max-width: 43.75rem;
+		margin: 0 0 1rem 0;
+		color: var(--headerColor);
+		position: relative;
+	}
+
+	.cs-text {
+		font-size: var(--bodyFontSize);
+		line-height: 1.5em;
+		text-align: inherit;
+		width: 100%;
+		max-width: 40.625rem;
+		margin: 0;
+		color: var(--bodyTextColor);
+	}
+</style>
