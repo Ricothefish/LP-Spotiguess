@@ -4,6 +4,8 @@
 import Layout from "../layouts/Layout.astro";
 import NavBar from "../components/NavBar.astro";
 
+import TVSpotiguess from "/src/pages/blog/TV-Spotiguess.png";
+
 
 // Manually define the articles, pointing to their respective .astro files
 const blogPosts = [
@@ -31,7 +33,7 @@ blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
             blogPosts.map(({ slug, title, date, image }) => (
                 <li class="blog-card">
                     <a href={`/blog/${slug}`}>
-                        <img src={image || '/default-image-blog.jpeg'} alt={title} />
+                        <img src={TVSpotiguess.src || '/default-image-blog.jpeg'} alt={title} />
                         <h3>{title}</h3>
                     </a>
                     <p>Published on: {new Date(date).toLocaleDateString()}</p>

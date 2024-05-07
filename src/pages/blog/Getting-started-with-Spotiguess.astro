@@ -3,6 +3,9 @@ import Layout from "../../layouts/Layout.astro";
 import NavBar from "../../components/NavBar.astro";
 import Footer from "../../components/Footer.astro";
 
+import TVSpotiguess from "/src/pages/blog/TV-Spotiguess.png";
+import SpotiguessMode from "/src/pages/blog/Spotiguess-mode.png";
+
 // Article metadata
 const title = "Getting started with Spotiguess";
 const date = "2024-05-05";
@@ -15,7 +18,7 @@ const image = "/src/pages/blog/TV-Spotiguess.png";
         <article class="specific-article">
             <h1>{title}</h1>
             <p>Published on: {new Date(date).toLocaleDateString()}</p>
-            {image && <img src={image} alt={title} class="responsive-image"/>}
+            {image && <img src={TVSpotiguess.src} alt={title} class="responsive-image"/>}
             <section>
                 <h2><strong>What is Spotiguess?</strong></h2>
                 <p>Spotiguess is the first Guess the Song Game that connects to your personal Spotify account.</p>
@@ -35,7 +38,7 @@ const image = "/src/pages/blog/TV-Spotiguess.png";
                     <li><strong>AI Generated:</strong> Let our AI tailor a playlist for you, simply enter a prompt and see what it creates.</li>
                 </ul>
                 <p>Each game mode offers a fresh way to experience the music you love or discover new tracks.</p>
-                <img src="/src/pages/blog/Spotiguess-mode.png" alt={title} class="responsive-image"/>
+                <img src={SpotiguessMode.src} alt={title} class="responsive-image"/>
                 <hr class="separator"/>
 
                 <h2><strong>How can I get better at Spotiguess: Tips and Tricks</strong></h2>
