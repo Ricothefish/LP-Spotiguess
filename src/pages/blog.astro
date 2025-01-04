@@ -1,11 +1,10 @@
 ---
-
 // Importation du layout et autres composants si nécessaire
 import Layout from "../layouts/Layout.astro";
 import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro"
 
 import TVSpotiguess from "/src/pages/blog/TV-Spotiguess.png";
-
 
 // Manually define the articles, pointing to their respective .astro files
 const blogPosts = [
@@ -13,72 +12,123 @@ const blogPosts = [
         slug: "Getting-started-with-Spotiguess",
         title: "Getting started with Spotiguess",
         date: "2024-05-05",
-        image: "src/pages/blog/TV-Spotiguess.png"
-    }
+        image: "src/pages/blog/TV-Spotiguess.png",
+    },
 ];
 
 // Sort posts by date
 blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 ---
 
-
-
-
 <Layout title="Blog">
     <NavBar />
     <h1>Blog Articles</h1>
-    <h2>Deep dive into the latest news.</h2>
+    <h2>Your source for insights and updates.</h2>
+    <p class="intro">
+        Welcome to the Spotiguess blog! Explore the latest Spotiguess news, updates, and tips. 
+    </p>
     <ul class="blog-list">
         {
             blogPosts.map(({ slug, title, date, image }) => (
                 <li class="blog-card">
                     <a href={`/blog/${slug}`}>
-                        <img src={TVSpotiguess.src || '/default-image-blog.jpeg'} alt={title} />
-                        <h3>{title}</h3>
+                        <img
+                            src={TVSpotiguess.src || "/default-image-blog.jpeg"}
+                            alt={title}
+                        />
+                        <div class="blog-content">
+                            <h3>{title}</h3>
+                            <p>
+                                Published on:{" "}
+                                {new Date(date).toLocaleDateString()}
+                            </p>
+                        </div>
                     </a>
-                    <p>Published on: {new Date(date).toLocaleDateString()}</p>
                 </li>
             ))
         }
     </ul>
+    <Footer />
 </Layout>
 
 <style>
+    /* Page Styling */
+    .intro {
+        margin: 20px 40px;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--headerColor);
+        text-align: center;
+    }
+
     .blog-list {
         margin-top: 40px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 0 20px;
+        justify-content: center;
+        max-width: 1200px; /* Largeur maximale de la liste */
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .blog-card {
-        background: #434343;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background: #1c1c1e;
+        border-radius: 12px;
         overflow: hidden;
-        width: 300px;   
-        padding: 5px;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        max-width: 600px; /* Largeur maximale pour chaque carte */
+        margin: 0 auto; /* Centre chaque carte */
     }
 
     .blog-card img {
         width: 100%;
         height: 200px;
-        object-fit: contain;
+        object-fit: cover;
+        border-bottom: 2px solid #1db954;
     }
 
-    .blog-card h3 {
-        margin: 16px;
+    .blog-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .blog-card a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    .blog-content {
+        padding: 16px;
+    }
+
+    .blog-content h3 {
         font-size: 1.2rem;
+        margin-bottom: 8px;
         color: #ffffff;
     }
 
-    .blog-card p {
-        margin: 0 16px 16px;
-        color: #b1b1b1;
+    .blog-content p {
+        font-size: 0.9rem;
+        color: #a1a1a1;
     }
 
-    h1, h2 {
-        margin: 20px 40px ;
+    /* Header */
+    h1 {
+        margin: 20px 0 10px;
+        text-align: center;
+        font-size: 2rem;
+        color: #ffffff;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 1.4rem;
         color: var(--headerColor);
     }
 </style>
