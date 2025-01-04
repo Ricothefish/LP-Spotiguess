@@ -1,17 +1,18 @@
 ---
 interface Props {
 	title: string;
+	description?: string; // Ajouter une description optionnelle
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Experience the only AI-powered Guess the song game, seamlessly integrated with Spotify! Perfect for a fun night with friends and family!" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description || "Experience the best Guess The Song Game, seamlessly integrated with Spotify! Perfect for a fun night with friends and family!"} />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/Favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -19,11 +20,12 @@ const { title } = Astro.props;
 	<body>
 		<slot />
 	</body>
-
 </html>
 
 
- 
+
+
+
 <style is:global>
 	:root {
 		--accent: 136, 58, 234;
@@ -119,8 +121,7 @@ const { title } = Astro.props;
 	}
 </style>
 
-
-<!-- Google tag (gtag.js) -->
+<!-- Google Analytics reste inchangé -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GVEK3MZRV"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
