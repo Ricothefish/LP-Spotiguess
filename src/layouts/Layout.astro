@@ -10,8 +10,35 @@ const { title, description } = Astro.props;
 <!doctype html>
 <html lang="en">
 	<head>
+		<!-- Hotjar Tracking Code for Spotiguess -->
+		<script>
+			(function (h, o, t, j, a, r) {
+				h.hj =
+					h.hj ||
+					function () {
+						(h.hj.q = h.hj.q || []).push(arguments);
+					};
+				h._hjSettings = { hjid: 5276362, hjsv: 6 };
+				a = o.getElementsByTagName("head")[0];
+				r = o.createElement("script");
+				r.async = 1;
+				r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+				a.appendChild(r);
+			})(
+				window,
+				document,
+				"https://static.hotjar.com/c/hotjar-",
+				".js?sv=",
+			);
+		</script>
+
+		
 		<meta charset="UTF-8" />
-		<meta name="description" content={description || "Experience the best Guess The Song Game, seamlessly integrated with Spotify! Perfect for a fun night with friends and family!"} />
+		<meta
+			name="description"
+			content={description ||
+				"Experience the best Guess The Song Game, seamlessly integrated with Spotify! Perfect for a fun night with friends and family!"}
+		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/Favicon.png" />
 		<meta name="generator" content={Astro.generator} />
@@ -21,10 +48,6 @@ const { title, description } = Astro.props;
 		<slot />
 	</body>
 </html>
-
-
-
-
 
 <style is:global>
 	:root {
@@ -78,7 +101,6 @@ const { title, description } = Astro.props;
 	body {
 		margin: 0;
 		padding: 0;
-
 	}
 
 	*,
@@ -98,7 +120,7 @@ const { title, description } = Astro.props;
 		margin-bottom: 0.25rem;
 		display: block;
 	}
-  
+
 	.cs-title {
 		font-size: var(--headerFontSize);
 		font-weight: 900;
@@ -122,11 +144,14 @@ const { title, description } = Astro.props;
 </style>
 
 <!-- Google Analytics reste inchangé -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0GVEK3MZRV"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0GVEK3MZRV"
+></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag("js", new Date());
 
-  gtag('config', 'G-0GVEK3MZRV');
+	gtag("config", "G-0GVEK3MZRV");
 </script>
